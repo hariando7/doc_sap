@@ -10,8 +10,8 @@ function FooterComponents() {
     <>
       {!isMobile ? (
         <>
-          <section className="bg-primary w-full p-2">
-            <p className="text-center flex m-auto text-sm justify-center items-center text-primary-foreground">
+          <section className="bg-primary w-full p-2 mt-auto">
+            <p className="text-center text-sm text-primary-foreground">
               Copyright © 2026 PAS Doc by IT Plantation. Made with ❤️
               for a better web.
             </p>
@@ -19,8 +19,8 @@ function FooterComponents() {
         </>
       ) : (
         <>
-          <section className="bg-primary w-full p-2">
-            <p className="text-center flex m-auto text-sm justify-center items-center text-primary-foreground">
+          <section className="bg-primary w-full p-2 mt-auto">
+            <p className="text-center text-sm text-primary-foreground">
               Copyright © 2026 PAS Doc by IT Plantation. Made with ❤️
               for a better web.
             </p>

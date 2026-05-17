@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 // @ts-expect-error: side-effect import for global CSS (no type declarations)
 import "./globals.css";
+import FooterComponents from "@/components/landing/component/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,11 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-white m-0 lg:m-20">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en">
+      <body className="min-h-screen flex flex-col m-0 lg:m-20">
+        <main className="flex-1">
+          {children}
+        </main>
       </body>
     </html>
   );

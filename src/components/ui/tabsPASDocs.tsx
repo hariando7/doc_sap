@@ -1,36 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
+
 type Tab = {
   title: string;
   value: string;
   content?: string | React.ReactNode;
 };
 
-export const TabsPASDocs = ({
-  tabs: propTabs,
-  tabsCard: propTabsCard,
-  containerClassName,
-  activeTabClassName,
-  tabClassName,
-  contentClassName,
-}: {
-  tabs: Tab[];
-  tabsCard: Tab[];
-  containerClassName?: string;
-  activeTabClassName?: string;
-  tabClassName?: string;
-  contentClassName?: string;
-}) => {
+export type TabsPASDocsHandle = {
+  switchTab: (value: string) => void;
+};
+
+export const TabsPASDocs = forwardRef<
+  TabsPASDocsHandle,
+  {
+    tabs: Tab[];
+    tabsCard: Tab[];
+    containerClassName?: string;
+    activeTabClassName?: string;
+    tabClassName?: string;
+    contentClassName?: string;
+  }
+>(function TabsPASDocs(
+  {
+    tabs: propTabs,
+    tabsCard: propTabsCard,
+    containerClassName,
+    activeTabClassName,
+    tabClassName,
+    contentClassName,
+  },
+  ref
+) {
   const [active, setActive] = useState<Tab>(propTabs[0]);
-  // const [activeCard, setActiveCard] = useState<Tab>(propTabs[0]);
   const [activeCard, setActiveCard] = useState<Tab>(propTabsCard[0]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
+  // ✅ Ganti tab aktif langsung by value — tidak bergantung pada urutan array
+  const selectTabByValue = (value: string) => {
+    const tab = propTabs.find((t) => t.value === value);
+    const card = propTabsCard.find((t) => t.value === value);
+    if (tab) setActive(tab);
+    if (card) setActiveCard(card);
+  };
+
+  // Tetap dipakai saat klik tombol tab (pakai idx dari propTabs yang stabil)
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
     const selectedTab = newTabs.splice(idx, 1);
@@ -38,12 +57,19 @@ export const TabsPASDocs = ({
     setTabs(newTabs);
     setActive(newTabs[0]);
 
-    // Sinkronkan activeCard dengan tabsCard
     const newTabsCard = [...propTabsCard];
     const selectedCard = newTabsCard.splice(idx, 1);
     newTabsCard.unshift(selectedCard[0]);
     setActiveCard(newTabsCard[0]);
   };
+
+  // ✅ Expose switchTab — langsung set by value, tidak pakai index
+  useImperativeHandle(ref, () => ({
+    switchTab: (value: string) => {
+      selectTabByValue(value);
+    },
+  }));
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [hovering, setHovering] = useState(false);
 
@@ -60,86 +86,57 @@ export const TabsPASDocs = ({
         <div className="w-full h-full overflow-x-auto md:p-2">
           <div className="flex space-x-2 md:space-x-4 min-w-max">
             {propTabs.map((tab, idx) => (
-              <>
-                <button
-                  key={tab.value}
-                  onClick={() => {
-                    moveSelectedTabToTop(idx);
-                    setActiveCard(propTabsCard[idx]);
-                  }}
-                  onMouseEnter={() => setHovering(true)}
-                  onMouseLeave={() => setHovering(false)}
-                  className={cn(
-                    "relative px-2 md:px-4 py-2 rounded-full",
-                    tabClassName
-                  )}
-                  style={{
-                    transformStyle: "preserve-3d",
-                  }}
-                >
-                  {active.value === tab.value && (
-                    <motion.div
-                      layoutId="clickedbutton"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.3,
-                        duration: 0.6,
-                      }}
-                      className={cn(
-                        "absolute inset-0 bg-gradient-to-r from-secondary to-secondary shadow-lg rounded-full text-white",
-                        activeTabClassName
-                      )}
-                    />
-                  )}
-                  <span
+              <button
+                key={tab.value}
+                onClick={() => {
+                  moveSelectedTabToTop(idx);
+                  setActiveCard(propTabsCard[idx]);
+                }}
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => setHovering(false)}
+                className={cn(
+                  "relative px-2 md:px-4 py-2 rounded-full",
+                  tabClassName
+                )}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {active.value === tab.value && (
+                  <motion.div
+                    layoutId="clickedbutton"
+                    transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                     className={cn(
-                      "relative block text-sm sm:text-base md:text-lg",
-                      {
-                        "text-white font-bold": active.value === tab.value,
-                        "text-black": active.value !== tab.value,
-                      }
+                      "absolute inset-0 bg-gradient-to-r from-secondary to-secondary shadow-lg rounded-full text-white",
+                      activeTabClassName
                     )}
-                  >
-                    {tab.title}
-                  </span>
-                </button>
-              </>
+                  />
+                )}
+                <span
+                  className={cn(
+                    "relative block text-sm sm:text-base md:text-lg",
+                    {
+                      "text-white font-bold": active.value === tab.value,
+                      "text-black": active.value !== tab.value,
+                    }
+                  )}
+                >
+                  {tab.title}
+                </span>
+              </button>
             ))}
           </div>
         </div>
       </div>
+
       <div className="flex w-full h-full gap-10">
-        <>
-          {!isMobile ? (
-            <>
-              {/* <FadeInDiv
-                tabs={tabs}
-                active={active}
-                hovering={hovering}
-                className={cn("", contentClassName)}
-              /> */}
-              <FadeInDivCard
-                tabsCard={propTabsCard}
-                activeCard={activeCard}
-                // hovering={hovering}
-                className={cn("", contentClassName)}
-              />
-            </>
-          ) : (
-            <>
-              <FadeInDivCard
-                tabsCard={propTabsCard}
-                activeCard={activeCard}
-                // hovering={hovering}
-                className={cn("", contentClassName)}
-              />
-            </>
-          )}
-        </>
+        <FadeInDivCard
+          tabsCard={propTabsCard}
+          activeCard={activeCard}
+          className={cn("", contentClassName)}
+        />
       </div>
     </>
   );
-};
+});
 
 export const FadeInDiv = ({
   className,
@@ -152,9 +149,7 @@ export const FadeInDiv = ({
   active: Tab;
   hovering?: boolean;
 }) => {
-  const isActive = (tab: Tab) => {
-    return tab.value === active.value;
-  };
+  const isActive = (tab: Tab) => tab.value === active.value;
 
   return (
     <div className="relative w-1/2 h-full">
@@ -163,14 +158,11 @@ export const FadeInDiv = ({
           key={tab.value}
           layoutId={tab.value}
           style={{
-            // scale: 1 - idx * 0.1,
             left: hovering ? idx * 0 : 0,
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 5 : 0,
           }}
-          animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
-          }}
+          animate={{ y: isActive(tab) ? [0, 40, 0] : 0 }}
           className={cn(
             "w-full h-full absolute top-0 left-0 items-start justify-start",
             className
@@ -187,13 +179,11 @@ export const FadeInDivCard = ({
   className,
   tabsCard,
   activeCard,
-}: // hovering,
-  {
-    className?: string;
-    tabsCard: Tab[];
-    activeCard: Tab;
-    // hovering?: boolean;
-  }) => {
+}: {
+  className?: string;
+  tabsCard: Tab[];
+  activeCard: Tab;
+}) => {
   return (
     <div className="relative w-full h-full md:mt-5">
       {tabsCard.map((tab) => (
@@ -205,9 +195,7 @@ export const FadeInDivCard = ({
             opacity: tab.value === activeCard.value ? 1 : 0,
             transition: "opacity 0.3s ease-in-out",
           }}
-          animate={{
-            y: tab.value === activeCard.value ? [0, 40, 0] : 0,
-          }}
+          animate={{ y: tab.value === activeCard.value ? [0, 40, 0] : 0 }}
           className={cn("absolute w-full top-0 left-0 md:p-4", className)}
         >
           {tab.content}

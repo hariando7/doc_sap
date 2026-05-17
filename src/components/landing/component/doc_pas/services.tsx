@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import Image from "next/image";
 import {
@@ -16,7 +16,7 @@ function Service() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleWhatsAppClick = (productName: string, productPrice: string) => {
-    const message = `Halo, saya tertarik dengan undangan digital ${productName}. Berikut detail nya:
+    const message = `Halo,  ${productName}. Berikut detail nya:
   - Harga: ${productPrice} Apakah tersedia? Mohon informasinya. Terima kasih!`;
     window.location.href = `https://wa.me/62895637316999?text=${encodeURIComponent(
       message
@@ -24,7 +24,9 @@ function Service() {
   };
 
   const [search, setSearch] = useState("");
-  const handleSearch = (value: any) => {
+  // Di page/parent component
+  const tabsRef = useRef<{ switchTab: (value: string) => void }>(null);
+  const handleSearch = (value: string) => {
     setSearch(value);
 
     const found = searchHandle.find(
@@ -32,28 +34,58 @@ function Service() {
     );
 
     if (found) {
-      const element = document.getElementById(found.tcode);
+      // 1. Pindah ke tab yang benar dulu
+      tabsRef.current?.switchTab(found.tab);
 
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      // 2. Scroll setelah tab aktif & konten ter-render
+      setTimeout(() => {
+        const element = document.getElementById(found.tcode);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 400); // beri waktu animasi tab selesai
     }
   };
   const searchHandle = [
     {
       tcode: "ZPAS502",
       title: "Membuat SPK",
+      tab: "SPK Mobile",
     },
     {
       tcode: "ZPAS501",
-      title: "Administrasi LKH",
+      title: "Membuat RPK",
+      tab: "SPK Mobile",
+    },
+    {
+      tcode: "ZPAS220",
+      title: "Report Absensi",
+      tab: "SPK Mobile",
+    },
+    {
+      tcode: "ZPASR33M",
+      title: "Send Tenaga Kerja ke SPK Mobile",
+      tab: "SPK Mobile",
+    },
+    {
+      tcode: "ZPASR32M",
+      title: "Send Aktivitas ke SPK Mobile",
+      tab: "SPK Mobile",
+    },
+    {
+      tcode: "ZPASR31M",
+      title: "Send Lokasi ke SPK Mobile",
+      tab: "SPK Mobile",
+    },
+    {
+      tcode: "ZPAS601D_M",
+      title: "Realisasi SPK Mobile ke",
+      tab: "SPK Mobile",
     },
     {
       tcode: "ZPASR31M",
       title: "Report Realisasi",
+      tab: "PAS",
     },
   ];
 
@@ -587,13 +619,7 @@ function Service() {
               </div>
             </div>
           </div>
-        </>
-      ),
-    },
-    {
-      title: "SAP 2",
-      description: (
-        <>
+
           <div className="space-y-6">
             {/* Hero Section */}
             <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 p-8 md:p-12 shadow-xl">
@@ -792,7 +818,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPAS501" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPAS501 — Membuat RPK
                     </h3>
                   </div>
@@ -1239,7 +1265,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPAS220" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPAS220 — Report Absensi
                     </h3>
                   </div>
@@ -1463,7 +1489,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPAS601D_M" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPAS601D_M — Realisasi SPK Mobile to SAP
                     </h3>
                   </div>
@@ -1733,7 +1759,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPASR33M" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPASR33M — Send Data Tenaga Kerja ke SPK Mobile
                     </h3>
                   </div>
@@ -1933,7 +1959,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPASR32M" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPASR32M — Send Data Aktivitas ke SPK Mobile
                     </h3>
                   </div>
@@ -2130,7 +2156,7 @@ function Service() {
                       PAS Documentation
                     </p>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    <h3 id="ZPASR31M" className="text-2xl md:text-3xl font-bold text-slate-800">
                       ZPASR31M — Send Data Lokasi ke SPK Mobile
                     </h3>
                   </div>
@@ -4910,54 +4936,116 @@ function Service() {
     <>
       {!isMobile ? (
         <>
-          <section className="bg-gradient-to-b from-white via-white to-white animate-gradient">
+          <section className="bg-gradient-to-b from-white via-white to-white animate-gradient mt-20">
             {/* konten */}
             <div className="h-[1000px] w-full p-10 flex justify-between [perspective:1000px] relative flex-col items-start">
               <h1 className="font-bold text-4xl text-center justify-center m-auto flex pt-10 text-primary hover:text-secondary">
-                PAS Documentation
+                Documentation
                 <FlipWords className="text-secondary" words={words} />
               </h1>
-              <div className="relative w-full max-w-xl mx-auto mb-6">
-                <Search className="absolute left-4 top-3.5 h-5 w-5 text-slate-400" />
-
-                <input
-                  type="text"
-                  placeholder="Cari TCODE..."
-                  value={search}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      handleSearch(search);
-                    }
-                  }}
-                  className="w-full pl-12 pr-4 py-3 rounded-2xl border border-slate-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
+              {/* Search bar */}
+              <div className="relative w-full max-w-2xl m-auto mt-5 mb-10">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-300/20 to-green-300/20 blur-md -z-10" />
+                <div className="relative flex items-center bg-white border border-gray-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-emerald-400 focus-within:border-emerald-400 transition-all duration-200">
+                  <Search className="absolute left-4 h-5 w-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Cari TCODE, modul, atau topik..."
+                    value={search}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") handleSearch(search);
+                    }}
+                    className="w-full pl-12 pr-14 py-3.5 bg-transparent rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none text-sm"
+                  />
+                  <kbd className="flex items-center gap-1 mr-4 px-2 py-1 text-xs text-gray-400 bg-gray-100 rounded-md border border-gray-200 shrink-0">
+                    ↵
+                  </kbd>
+                </div>
               </div>
-              <TabsPASDocs tabs={tabs} tabsCard={tabsCard} />
+              <TabsPASDocs
+                ref={tabsRef}
+                tabs={tabs}
+                tabsCard={tabsCard}
+              />
             </div>
           </section>
         </>
       ) : (
         <>
-          <section className="bg-gradient-to-b from-white via-white to-white animate-gradient">
-            {/* konten */}
-            <div className="h-[3300px] md:h-[900px] w-full p-5 md:p-10 flex justify-between [perspective:1000px] relative flex-col items-start">
-              <Image
-                src="/assets/images/newLogo-removebg.png"
-                width={200}
-                height={200}
-                alt="SAP PAS Documentation"
-                className="flex m-auto"
-              />
-              <div className="pt-4 pb-4 justify-center m-auto">
-                <h1 className="font-bold text-center justify-center m-auto flex text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-primary hover:text-secondary">
-                  PAS Documentation
-                </h1>
-                <h1 className="font-bold text-center justify-center m-auto flex text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-primary hover:text-secondary">
-                  <FlipWords className="text-secondary" words={words} />
-                </h1>
+          <section className="relative overflow-hidden h-[1600px] bg-gradient-to-b from-slate-50 via-white to-white">
+            {/* Background Blur */}
+            <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-100/40 rounded-full blur-3xl" />
+
+            {/* Main Content */}
+            <div className="relative w-full px-5 py-10 md:px-10 lg:px-20 flex flex-col">
+
+              {/* Logo */}
+              <div className="flex justify-center">
+                <div className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-lg border border-slate-200 p-4">
+                  <Image
+                    src="/assets/images/newLogo-removebg.png"
+                    width={180}
+                    height={180}
+                    alt="SAP PAS Documentation"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
-              <TabsPASDocs tabs={tabs} tabsCard={tabsCard} />
+
+              {/* Heading */}
+              <div className="mt-8 text-center max-w-5xl mx-auto">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm">
+                  <i> Plantation Application System </i>
+                </div>
+
+                <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                  Documentation
+                </h1>
+
+                <div className="mt-4 flex justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-600">
+                    <FlipWords className="text-emerald-600" words={words} />
+                  </div>
+                </div>
+
+                <p className="mt-6 text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                  Untuk Administrasi
+                </p>
+              </div>
+
+              {/* Search */}
+              <div className="relative w-full max-w-3xl mx-auto mt-10">
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-300/20 to-green-300/20 blur-2xl" />
+
+                <div className="relative flex items-center rounded-3xl border border-slate-200 bg-white/90 backdrop-blur-md shadow-xl transition-all duration-300 focus-within:border-emerald-400 focus-within:ring-4 focus-within:ring-emerald-100">
+
+                  <Search className="absolute left-5 h-5 w-5 text-slate-400" />
+
+                  <input
+                    type="text"
+                    placeholder="Cari TCODE, modul, dokumentasi, atau topik..."
+                    value={search}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") handleSearch(search);
+                    }}
+                    className="w-full bg-transparent py-4 pl-14 pr-20 text-sm md:text-base text-slate-700 placeholder:text-slate-400 focus:outline-none rounded-3xl"
+                  />
+
+                  <div className="hidden sm:flex items-center gap-1 mr-4 px-3 py-1.5 text-xs text-slate-500 bg-slate-100 rounded-xl border border-slate-200">
+                    ENTER ↵
+                  </div>
+                </div>
+              </div>
+
+              {/* Tabs */}
+              <div className="mt-14 w-full">
+                <TabsPASDocs tabs={tabs} tabsCard={tabsCard} />
+              </div>
             </div>
           </section>
         </>

@@ -95,58 +95,16 @@ function LayananPage({ className }: { className?: string }) {
               </Menu>
             </div>
 
-            {/* Hero Buka */}
-            {/* <HeroDekstop /> */}
-            {/* Hero Tutup */}
-
-            {/* Services Buka */}
             <DocsPAS />
-            {/* Services Tutup */}
-
-            {/* Advertisement Buka*/}
-            {/* <AdvertisementComponents /> */}
-            {/* Advertisement Tutup*/}
-
-            {/* Client Buka */}
-            {/* <ClientComponents /> */}
-            {/* Client Tutup */}
-
-            {/* Footer Buka */}
             <FooterComponents />
-            {/* Footer Tutup */}
           </>
         ) : (
           <>
-            {/* <div className="relative h-screen w-full"> */}
-
-            {/* Hero Buka */}
-            {/* <HeroDekstop /> */}
-            {/* Hero Tutup */}
-
-            {/* Services Buka */}
             <DocsPAS />
-            {/* Services Tutup */}
-
-            {/* Advertisement Buka*/}
-            {/* <AdvertisementComponents /> */}
-            {/* Advertisement Tutup*/}
-
-            {/* Client Buka */}
-            {/* <ClientComponents /> */}
-            {/* Client Tutup */}
-
-            {/* Nababr buka */}
             <FloatingDock
               className="bottom-0 w-full flex m-auto justify-center fixed"
               items={links}
             />
-            {/* Nababr Tutup */}
-
-            {/* Footer Buka */}
-            {/* <FooterComponents /> */}
-            {/* Footer Tutup */}
-
-            {/* </div> */}
           </>
         )}
       </>

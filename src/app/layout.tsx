@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 // @ts-expect-error: side-effect import for global CSS (no type declarations)
 import "./globals.css";
-import FooterComponents from "@/components/landing/component/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "PAS Docs | Great Giant Pineapple",
@@ -30,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col m-0 lg:m-20">
+      <body className="min-h-screen flex flex-col m-0 lg:ml-10 lg:mr-10 lg:mt-10">
         <main className="flex-1">
           {children}
         </main>

@@ -173,7 +173,7 @@ function Service() {
               </div>
             </div>
 
-            {/* Description */}
+            {/* Latar Belakang Masalah */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-2 h-10 rounded-full bg-green-600" />
@@ -249,7 +249,7 @@ function Service() {
               </div>
             </div>
 
-            {/* Description */}
+            {/* Benefit */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-2 h-10 rounded-full bg-green-600" />
@@ -317,6 +317,7 @@ function Service() {
               </div>
             </div>
 
+            {/* Cara Kerja Sistem */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-2 h-10 rounded-full bg-green-600" />
@@ -410,6 +411,7 @@ function Service() {
               </div>
             </div>
 
+            {/* Flowchart SPK Mobile */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
               {/* Header */}
               <div className="flex items-center gap-3 mb-10">
@@ -437,6 +439,7 @@ function Service() {
               </div>
             </div>
 
+            {/* Menu pada SPK Mobile */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
               {/* Header */}
               <div className="flex items-center gap-3 mb-10">
@@ -592,7 +595,7 @@ function Service() {
               </div>
             </div>
 
-            {/* Highlight */}
+            {/* Akses SAP PAS */}
             <div className="relative overflow-hidden rounded-[28px] bg-[#00a3de] p-6 md:p-8 text-white shadow-xl">
               <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-3xl" />
 
@@ -618,39 +621,6 @@ function Service() {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="space-y-6">
-            {/* Hero Section */}
-            <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 p-8 md:p-12 shadow-xl">
-              {/* Blur Effect */}
-              <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-60 h-60 bg-black/10 rounded-full blur-3xl" />
-
-              <div className="relative z-10">
-                <Image
-                  src="/assets/images/SAP.png"
-                  width={200}
-                  height={200}
-                  alt="SAP PAS Documentation"
-                  className="flex m-auto drop-shadow-2xl bg-white rounded-lg p-4"
-                />
-
-                <div className="text-center mt-6 text-white">
-                  <p className="uppercase tracking-[4px] text-green-100 text-xs md:text-sm mb-3">
-                    Plantation Application System
-                  </p>
-
-                  <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                    Proses Administrasi SPK Mobile
-                  </h1>
-
-                  <p className="text-sm md:text-lg text-green-50 max-w-3xl mx-auto leading-8">
-                    Untuk Administrasi
-                  </p>
-                </div>
-              </div>
-            </div>
 
             {/* Akses SAP PAS */}
             <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
@@ -662,7 +632,7 @@ function Service() {
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
                   <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 text-white font-bold text-lg shadow-lg">
-                    1
+                    5
                   </div>
 
                   <div>
@@ -2738,7 +2708,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-01", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan1.png"
             alt="tidak ada gambar"
@@ -2750,36 +2720,13 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-01", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
+          <Image
+            src="/assets/images/comingsoon.png"
+            width={200}
+            height={200}
+            alt="SAP PAS Documentation"
+            className="flex m-auto drop-shadow-2xl bg-white rounded-lg p-4 lg:w-1/4"
+          />
         </>
       ),
     },
@@ -2809,7 +2756,7 @@ function Service() {
               <button
                 className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
                 onClick={() =>
-                  window.open("https://percetakanmedia.com/khitan-01", "_blank")
+                  window.open("", "_blank")
                 }
               >
                 Demo
@@ -2827,7 +2774,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-03", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan3.png"
             alt="tidak ada gambar"
@@ -2863,7 +2810,7 @@ function Service() {
             <button
               className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
               onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-03", "_blank")
+                window.open("", "_blank")
               }
             >
               Demo
@@ -2881,7 +2828,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-01", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan1.png"
             alt="tidak ada gambar"
@@ -2917,7 +2864,7 @@ function Service() {
             <button
               className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
               onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-01", "_blank")
+                window.open("", "_blank")
               }
             >
               Demo
@@ -2952,7 +2899,7 @@ function Service() {
               <button
                 className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
                 onClick={() =>
-                  window.open("https://percetakanmedia.com/khitan-01", "_blank")
+                  window.open("", "_blank")
                 }
               >
                 Demo
@@ -2970,7 +2917,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-03", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan3.png"
             alt="tidak ada gambar"
@@ -3006,7 +2953,7 @@ function Service() {
             <button
               className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
               onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-03", "_blank")
+                window.open("", "_blank")
               }
             >
               Demo
@@ -3024,7 +2971,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-01", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan1.png"
             alt="tidak ada gambar"
@@ -3060,7 +3007,7 @@ function Service() {
             <button
               className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
               onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-01", "_blank")
+                window.open("", "_blank")
               }
             >
               Demo
@@ -3095,7 +3042,7 @@ function Service() {
               <button
                 className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
                 onClick={() =>
-                  window.open("https://percetakanmedia.com/khitan-01", "_blank")
+                  window.open("", "_blank")
                 }
               >
                 Demo
@@ -3113,7 +3060,7 @@ function Service() {
         <>
           <Image
             onClick={() =>
-              window.open("https://percetakanmedia.com/khitan-03", "_blank")
+              window.open("", "_blank")
             }
             src="/assets/images/khitan3.png"
             alt="tidak ada gambar"
@@ -3149,7 +3096,7 @@ function Service() {
             <button
               className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
               onClick={() =>
-                window.open("https://percetakanmedia.com/khitan-03", "_blank")
+                window.open("", "_blank")
               }
             >
               Demo

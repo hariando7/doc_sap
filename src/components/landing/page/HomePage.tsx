@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import HeroDekstop from "../component/Hero";
-import ServicesComponents from "../component/Services";
+// import ServicesComponents from "../component/Services";
 // import AdvertisementComponents from "../component/Advertisement";
 // import ClientComponents from "../component/Client";
 import FooterComponents from "../component/Footer";
@@ -25,6 +25,7 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { FcInvite } from "react-icons/fc";
+// import ServicesComponents from "../component/Services";
 
 const links = [
   {
@@ -80,58 +81,10 @@ function HomePage({ className }: { className?: string }) {
                   >
                     <div className="text-sm grid grid-cols-2 gap-10 p-4">
                       <ProductItem
-                        title="SAP"
-                        href="/undangan-digital"
+                        title="DOC SAP PAS"
+                        href="/doc_pas"
                         src="/assets/images/image_sap.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="PAS"
-                        href="/undangan-digital"
-                        src="/assets/images/image_pas.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="RPK"
-                        href="/undangan-digital"
-                        src="/assets/images/image_rpk.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="SPK"
-                        href="/undangan-digital"
-                        src="/assets/images/image_spk.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="LKH"
-                        href="/undangan-digital"
-                        src="/assets/images/image_spk.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="LHO"
-                        href="/undangan-digital"
-                        src="/assets/images/image_lho.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="LHR"
-                        href="/undangan-digital"
-                        src="/assets/images/image_lhr.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="LKB"
-                        href="/undangan-digital"
-                        src="/assets/images/image_spk.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="SPK Mobile"
-                        href="/undangan-digital"
-                        src="/assets/images/image_spkmobile.png"
-                        description="Revisi Sepuasnya"
+                        description="Selengkapnya"
                       />
                     </div>
                   </MenuItem>
@@ -144,7 +97,7 @@ function HomePage({ className }: { className?: string }) {
             {/* Hero Tutup */}
 
             {/* Services Buka */}
-            <ServicesComponents />
+            {/* <ServicesComponents /> */}
             {/* Services Tutup */}
 
             {/* Advertisement Buka*/}
@@ -168,7 +121,7 @@ function HomePage({ className }: { className?: string }) {
             {/* Hero Tutup */}
 
             {/* Services Buka */}
-            <ServicesComponents />
+            {/* <ServicesComponents /> */}
             {/* Services Tutup */}
 
             {/* Advertisement Buka*/}

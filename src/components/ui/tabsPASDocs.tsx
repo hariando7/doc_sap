@@ -3,7 +3,7 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
+// import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 type Tab = {
   title: string;
@@ -73,7 +73,7 @@ export const TabsPASDocs = forwardRef<
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [hovering, setHovering] = useState(false);
 
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  // const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <>

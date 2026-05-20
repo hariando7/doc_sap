@@ -61,11 +61,8 @@ function LayananPage({ className }: { className?: string }) {
                     item="Home"
                   >
                     <div className="flex flex-col space-y-4 text-sm">
-                      <HoveredLink href="/">
-                        Tentang Percetakan Media
-                      </HoveredLink>
                       <HoveredLink href="/docs_pas">
-                        Layanan Docs PAS
+                        Docs PAS
                       </HoveredLink>
                     </div>
                   </MenuItem>

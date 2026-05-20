@@ -124,7 +124,7 @@ export const Menu = ({
               src="/assets/images/newLogo-removebg.png"
               width={100}
               height={50}
-              alt="Percetakan Media"
+              alt="logo"
               className=""
             />
           </div>
@@ -134,7 +134,7 @@ export const Menu = ({
         </div>
         <div className="flex items-center justify-center">
           <Link
-            href="/login"
+            href="/docs_pas"
             onMouseEnter={handleMouseEnter}
             className="w-full text-[16px] text-center px-6 py-2 bg-gradient-to-r from-secondary to-secondary text-primary-foreground hover:text-line-10 hover:from-white hover:to-white hover:bg-gradient-to-r hover:text-secondary hover:border-2 hover:border-secondary rounded-lg cursor-pointer transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110 hover:rotate-1 shadow-md hover:shadow-xl transform-gpu"
           >
@@ -143,11 +143,8 @@ export const Menu = ({
             ) : (
               <>
                 <div className="flex gap-2">
-                  {/* <span>
-                    <BsWhatsapp className="w-6 h-6" />
-                  </span> */}
                   <span className="animated-text flex justify-center font-bold">
-                    {"Masuk".split("").map((letter, index) => (
+                    {"Documentation".split("").map((letter, index) => (
                       <span
                         key={index}
                         ref={(el) => {
@@ -171,7 +168,7 @@ export const Menu = ({
         animate={{ y: showNavbar ? 0 : -140 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         onMouseLeave={() => setActive(null)}
-        className="fixed top-0 left-0 right-0 z-30 md:rounded-none lg:w-full flex justify-between transition-transform duration-500 ease-in-out mt-[75px] pl-28 pr-28 bg-white/80 backdrop-blur-sm border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+        className="fixed top-0 left-0 right-0 z-30 md:rounded-none lg:w-full flex justify-between transition-transform duration-500 ease-in-out mt-[75px] pl-28 pr-28 bg-white/50 backdrop-blur-sm border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
       >
         <div className="bg-primary w-full h-full p-2 rounded-lg justify-between flex items-center pl-12 pr-12">
           <div className="text-primary-foreground font-bold flex gap-2 justify-start">
@@ -181,15 +178,19 @@ export const Menu = ({
           </div>
           <div className="text-primary-foreground font-bold flex gap-2 justify-end">
             <div className="flex gap-2">
-              <p>
+              {/* <p>
                 <FaInstagram className="w-6 h-6 text-white" />
               </p>
               <p>
                 <FaFacebookSquare className="w-6 h-6 text-white" />
-              </p>
-              <p>
+              </p> */}
+              <Link
+                href="https://wa.me/62895637316999?text=Halo%20saya%20ingin%20bertanya"
+                target="_blank"
+                className="bg-green-500 p-3 rounded-full hover:bg-green-600 transition inline-flex"
+              >
                 <BsWhatsapp className="w-6 h-6 text-white" />
-              </p>
+              </Link>
             </div>
           </div>
         </div>

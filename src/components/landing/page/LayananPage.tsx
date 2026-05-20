@@ -75,16 +75,10 @@ function LayananPage({ className }: { className?: string }) {
                   >
                     <div className="text-sm grid grid-cols-2 gap-10 p-4">
                       <ProductItem
-                        title="Tema Premium 1"
+                        title="Doc PAS"
                         href="/docs_pas"
-                        src="/assets/images/premium1.png"
-                        description="Revisi Sepuasnya"
-                      />
-                      <ProductItem
-                        title="Tema Premium 2"
-                        href="/docs_pas"
-                        src="/assets/images/premium2.png"
-                        description="Revisi Sepuasnya"
+                        src="/assets/images/rpk.png"
+                        description="Selengkapnya"
                       />
                     </div>
                   </MenuItem>

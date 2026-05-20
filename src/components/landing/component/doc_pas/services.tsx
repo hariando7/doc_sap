@@ -34,7 +34,7 @@ function Service() {
     );
 
     if (found) {
-      // 1. Pindah ke tab yang benar dulu
+      // 1. Pindah ke tab yang benar
       tabsRef.current?.switchTab(found.tab);
 
       // 2. Scroll setelah tab aktif & konten ter-render
@@ -43,7 +43,7 @@ function Service() {
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-      }, 400); // beri waktu animasi tab selesai
+      }, 400); 
     }
   };
   const searchHandle = [
@@ -86,6 +86,11 @@ function Service() {
       tcode: "ZPASR31M",
       title: "Report Realisasi",
       tab: "PAS",
+    },
+    {
+      tcode: "ZPAS_PENGAMATAN",
+      title: "Pengamatan",
+      tab: "Pengamatan",
     },
   ];
 
@@ -133,6 +138,11 @@ function Service() {
     {
       title: "LKB",
       value: "LKB",
+      content: <></>,
+    },
+    {
+      title: "Pengamatan",
+      value: "Pengamatan",
       content: <></>,
     },
   ];
@@ -2736,33 +2746,6 @@ function Service() {
       title: "PAS 2",
       description: (
         <>
-          <div className="">
-            <p className="text-xs md:text-lg items-center justify-center flex text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto sapiente corrupti quia ipsum at laborum cum neque eum rem fugit! Rerum aliquam error blanditiis doloribus quasi itaque porro asperiores dolorum in impedit illum necessitatibus optio natus rem, nihil veritatis distinctio reprehenderit ea ratione. Natus fugiat illo ipsa adipisci ad hic praesentium id nulla quas dolorem, magni sequi, sed suscipit expedita rem iste porro unde! Aspernatur ad rerum soluta delectus ut earum maxime? Quo obcaecati mollitia maxime dolores officia, nemo totam praesentium dignissimos saepe ad tenetur quam explicabo, placeat qui, consequatur ratione aperiam distinctio unde repellat amet dolorum libero quia. Praesentium mollitia modi, dolores, voluptate, maiores sint dignissimos aspernatur blanditiis deleniti accusamus similique sed doloremque dolorum laborum inventore commodi suscipit numquam ducimus quibusdam quo unde eum ratione veritatis repellat. Iste omnis, dolorum quae numquam inventore totam esse qui beatae amet eius dolor neque maiores quod unde excepturi quis doloremque voluptatum perferendis sequi. Perferendis mollitia enim, officia quod ipsa ex expedita voluptatem ad nulla recusandae iste. Non id provident reiciendis fuga voluptas, ad possimus minima dolor odio magnam sit dolore sequi explicabo adipisci soluta et rerum nihil obcaecati ipsam? Reiciendis illum, earum doloribus ipsam eius obcaecati sed, nobis voluptate velit porro assumenda ratione sunt aspernatur architecto reprehenderit a excepturi magnam nemo! Repellendus ea veniam, ratione quos quae totam quia? Libero, iste magnam similique quo, doloremque odit sunt dolore alias eaque impedit accusamus ipsam a vel fuga adipisci officiis totam repellendus assumenda error aperiam molestias doloribus sed? Porro, omnis necessitatibus adipisci placeat repellat dolore natus neque impedit? Aperiam, sunt! Autem reprehenderit iure ut fugiat quas sit commodi, est deleniti quod vero cum enim ad optio, laborum hic numquam rerum iusto necessitatibus provident alias quasi! Ipsum, amet soluta? Porro assumenda quo nemo natus! Unde molestias maxime fugiat ducimus. Corrupti dignissimos sint dolorum placeat, suscipit nostrum inventore repellendus libero distinctio, earum optio, nobis odio non provident commodi quibusdam minima aliquam omnis eos officia vitae accusantium? Aliquid rerum nemo fugit reiciendis blanditiis! Ut, sit. Autem officiis, eius reiciendis exercitationem inventore earum doloremque. Animi laborum commodi est quisquam! Pariatur iusto velit, recusandae debitis atque sed vero esse nostrum perferendis aliquam eligendi cumque exercitationem sit facere ad architecto laborum, libero corporis iste voluptates labore voluptas, assumenda nisi eius. Ad voluptatum aperiam molestias similique perferendis inventore saepe, modi facilis cum rem, eum laborum iusto adipisci, odit vel doloribus quis. Vel deleniti nostrum iste itaque nam officiis! Excepturi esse, vitae quos dolor, distinctio harum, hic minus dolorem quasi modi voluptatem dicta nostrum atque vero! Molestiae minus quod libero possimus quibusdam sit ad accusantium eveniet, autem tempore magnam nihil eos et ipsam assumenda animi quisquam atque! Laboriosam quaerat minus quos, cum, suscipit beatae molestiae nisi tenetur consequuntur commodi quod sunt! Beatae, deserunt vero? Laborum aspernatur hic aut odit a nemo, tenetur architecto doloribus natus iste? Accusamus dolorem, perferendis accusantium nostrum sint totam iusto dicta numquam voluptate id voluptatem sequi dolore libero illo, tempore suscipit nihil facere provident autem laudantium quia assumenda dolor beatae? Architecto corporis magnam error quae amet tempore autem a sunt eius iure, laudantium repellat fuga odit. Odit ducimus quia consequatur delectus sit nulla doloribus expedita omnis veritatis esse hic ut, laudantium, ad velit dicta? Consectetur id aut repudiandae recusandae, corrupti, maxime, soluta nam nihil rerum veniam architecto? Soluta ipsum nulla aliquam consequatur perspiciatis, maxime animi reiciendis sint deserunt. Eius accusantium nostrum, dolor reprehenderit ipsa esse suscipit id doloremque quaerat omnis enim, nulla vel laudantium maiores recusandae ab nobis similique quisquam eaque sint ea distinctio. Nostrum necessitatibus inventore et? Voluptatum quo dolorum reprehenderit dicta est laborum tempore dolore in dolores? Voluptas beatae provident alias atque sed? Accusamus hic aspernatur laudantium magni voluptate? Porro nobis blanditiis fugit quos eveniet at velit distinctio reiciendis, corporis expedita enim magnam voluptatem. Ea quo suscipit amet voluptatum officia error, dolorem aspernatur aperiam sequi quisquam saepe, alias iste voluptates, at similique nulla recusandae. Reiciendis libero sapiente ad rem quod quaerat fugit ratione perspiciatis quae commodi voluptate recusandae beatae iure consectetur illo nesciunt neque similique vitae tempora saepe mollitia, nostrum odio. Enim praesentium, amet voluptates facilis sed earum dicta reprehenderit architecto aut rem et odio cum. Dolorum officiis dolores facere earum, nam obcaecati itaque nisi odio rerum? Pariatur earum nesciunt aut fugit optio quaerat atque, consequatur dolorem totam, porro quos commodi nihil? Fugiat sequi consectetur odio quasi porro aliquam quo obcaecati veritatis nisi quisquam exercitationem quod error molestias iure, ea maxime eius eos, at vitae totam. Sed itaque quidem recusandae odit voluptas harum atque incidunt aspernatur mollitia distinctio quaerat dolorem, facere nemo ea nobis autem exercitationem! Exercitationem, fugiat inventore! Animi ipsam repudiandae est eveniet earum voluptates enim voluptas porro nemo laboriosam provident corrupti itaque doloremque quos nam dignissimos commodi hic expedita odit temporibus vero, omnis nobis numquam exercitationem! Assumenda ipsam expedita magni distinctio excepturi mollitia non nisi saepe? Pariatur iure debitis, impedit neque aperiam numquam amet odit mollitia saepe fugit fuga, quae, culpa quas adipisci earum dolorem cum! A modi aspernatur iste asperiores pariatur doloremque adipisci iusto esse commodi velit. Voluptas recusandae itaque, aliquam omnis adipisci architecto numquam quasi dolor possimus esse? Quam eveniet ipsam vero, voluptas et, ratione molestiae est iste reiciendis nam ipsum. Error deserunt illum in commodi, ducimus repellat consequuntur maiores iusto libero nihil maxime, eligendi nesciunt quibusdam, optio vel id. Quod incidunt nemo tempora in dolorem iure architecto fugit soluta, dolores dignissimos modi optio rerum debitis, consequatur nihil quia id cupiditate doloremque obcaecati, molestiae iste cumque velit temporibus! Mollitia cum, velit fugiat recusandae dolorum et vero unde, dolor quidem deleniti corrupti maiores? Distinctio neque quidem excepturi, dolorem hic ipsa unde voluptates aut veritatis sint nam corporis incidunt quod quos possimus. Accusamus, sapiente officiis. Rem eveniet, aliquid voluptate adipisci doloremque quia magni quibusdam doloribus ab, voluptatum labore. At, quaerat saepe. Accusantium nemo minima eaque ducimus porro sunt vel iusto aspernatur beatae atque. Aperiam omnis, nulla eaque fugiat cum incidunt voluptates ut ullam culpa repellat. Vitae cupiditate, sunt in recusandae voluptatem hic aliquid adipisci autem saepe illum, quis temporibus perspiciatis enim quaerat provident facere sint odit. Amet neque soluta explicabo assumenda esse ratione quibusdam.
-            </p>
-
-            <div className="flex gap-2 cursor-pointer justify-between">
-              <button
-                onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-                className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-              >
-                <div className="flex gap-2">
-                  <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                    Pesan Sekarang{" "}
-                  </p>
-                  <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-                </div>
-              </button>
-              <button
-                className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-                onClick={() =>
-                  window.open("", "_blank")
-                }
-              >
-                Demo
-              </button>
-            </div>
-          </div>
         </>
       ),
     },
@@ -2786,36 +2769,6 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 3", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
         </>
       ),
     },
@@ -2840,36 +2793,6 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
         </>
       ),
     },
@@ -2879,33 +2802,6 @@ function Service() {
       title: "PAS 2",
       description: (
         <>
-          <div className="">
-            <p className="text-xs md:text-lg items-center justify-center flex text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto sapiente corrupti quia ipsum at laborum cum neque eum rem fugit! Rerum aliquam error blanditiis doloribus quasi itaque porro asperiores dolorum in impedit illum necessitatibus optio natus rem, nihil veritatis distinctio reprehenderit ea ratione. Natus fugiat illo ipsa adipisci ad hic praesentium id nulla quas dolorem, magni sequi, sed suscipit expedita rem iste porro unde! Aspernatur ad rerum soluta delectus ut earum maxime? Quo obcaecati mollitia maxime dolores officia, nemo totam praesentium dignissimos saepe ad tenetur quam explicabo, placeat qui, consequatur ratione aperiam distinctio unde repellat amet dolorum libero quia. Praesentium mollitia modi, dolores, voluptate, maiores sint dignissimos aspernatur blanditiis deleniti accusamus similique sed doloremque dolorum laborum inventore commodi suscipit numquam ducimus quibusdam quo unde eum ratione veritatis repellat. Iste omnis, dolorum quae numquam inventore totam esse qui beatae amet eius dolor neque maiores quod unde excepturi quis doloremque voluptatum perferendis sequi. Perferendis mollitia enim, officia quod ipsa ex expedita voluptatem ad nulla recusandae iste. Non id provident reiciendis fuga voluptas, ad possimus minima dolor odio magnam sit dolore sequi explicabo adipisci soluta et rerum nihil obcaecati ipsam? Reiciendis illum, earum doloribus ipsam eius obcaecati sed, nobis voluptate velit porro assumenda ratione sunt aspernatur architecto reprehenderit a excepturi magnam nemo! Repellendus ea veniam, ratione quos quae totam quia? Libero, iste magnam similique quo, doloremque odit sunt dolore alias eaque impedit accusamus ipsam a vel fuga adipisci officiis totam repellendus assumenda error aperiam molestias doloribus sed? Porro, omnis necessitatibus adipisci placeat repellat dolore natus neque impedit? Aperiam, sunt! Autem reprehenderit iure ut fugiat quas sit commodi, est deleniti quod vero cum enim ad optio, laborum hic numquam rerum iusto necessitatibus provident alias quasi! Ipsum, amet soluta? Porro assumenda quo nemo natus! Unde molestias maxime fugiat ducimus. Corrupti dignissimos sint dolorum placeat, suscipit nostrum inventore repellendus libero distinctio, earum optio, nobis odio non provident commodi quibusdam minima aliquam omnis eos officia vitae accusantium? Aliquid rerum nemo fugit reiciendis blanditiis! Ut, sit. Autem officiis, eius reiciendis exercitationem inventore earum doloremque. Animi laborum commodi est quisquam! Pariatur iusto velit, recusandae debitis atque sed vero esse nostrum perferendis aliquam eligendi cumque exercitationem sit facere ad architecto laborum, libero corporis iste voluptates labore voluptas, assumenda nisi eius. Ad voluptatum aperiam molestias similique perferendis inventore saepe, modi facilis cum rem, eum laborum iusto adipisci, odit vel doloribus quis. Vel deleniti nostrum iste itaque nam officiis! Excepturi esse, vitae quos dolor, distinctio harum, hic minus dolorem quasi modi voluptatem dicta nostrum atque vero! Molestiae minus quod libero possimus quibusdam sit ad accusantium eveniet, autem tempore magnam nihil eos et ipsam assumenda animi quisquam atque! Laboriosam quaerat minus quos, cum, suscipit beatae molestiae nisi tenetur consequuntur commodi quod sunt! Beatae, deserunt vero? Laborum aspernatur hic aut odit a nemo, tenetur architecto doloribus natus iste? Accusamus dolorem, perferendis accusantium nostrum sint totam iusto dicta numquam voluptate id voluptatem sequi dolore libero illo, tempore suscipit nihil facere provident autem laudantium quia assumenda dolor beatae? Architecto corporis magnam error quae amet tempore autem a sunt eius iure, laudantium repellat fuga odit. Odit ducimus quia consequatur delectus sit nulla doloribus expedita omnis veritatis esse hic ut, laudantium, ad velit dicta? Consectetur id aut repudiandae recusandae, corrupti, maxime, soluta nam nihil rerum veniam architecto? Soluta ipsum nulla aliquam consequatur perspiciatis, maxime animi reiciendis sint deserunt. Eius accusantium nostrum, dolor reprehenderit ipsa esse suscipit id doloremque quaerat omnis enim, nulla vel laudantium maiores recusandae ab nobis similique quisquam eaque sint ea distinctio. Nostrum necessitatibus inventore et? Voluptatum quo dolorum reprehenderit dicta est laborum tempore dolore in dolores? Voluptas beatae provident alias atque sed? Accusamus hic aspernatur laudantium magni voluptate? Porro nobis blanditiis fugit quos eveniet at velit distinctio reiciendis, corporis expedita enim magnam voluptatem. Ea quo suscipit amet voluptatum officia error, dolorem aspernatur aperiam sequi quisquam saepe, alias iste voluptates, at similique nulla recusandae. Reiciendis libero sapiente ad rem quod quaerat fugit ratione perspiciatis quae commodi voluptate recusandae beatae iure consectetur illo nesciunt neque similique vitae tempora saepe mollitia, nostrum odio. Enim praesentium, amet voluptates facilis sed earum dicta reprehenderit architecto aut rem et odio cum. Dolorum officiis dolores facere earum, nam obcaecati itaque nisi odio rerum? Pariatur earum nesciunt aut fugit optio quaerat atque, consequatur dolorem totam, porro quos commodi nihil? Fugiat sequi consectetur odio quasi porro aliquam quo obcaecati veritatis nisi quisquam exercitationem quod error molestias iure, ea maxime eius eos, at vitae totam. Sed itaque quidem recusandae odit voluptas harum atque incidunt aspernatur mollitia distinctio quaerat dolorem, facere nemo ea nobis autem exercitationem! Exercitationem, fugiat inventore! Animi ipsam repudiandae est eveniet earum voluptates enim voluptas porro nemo laboriosam provident corrupti itaque doloremque quos nam dignissimos commodi hic expedita odit temporibus vero, omnis nobis numquam exercitationem! Assumenda ipsam expedita magni distinctio excepturi mollitia non nisi saepe? Pariatur iure debitis, impedit neque aperiam numquam amet odit mollitia saepe fugit fuga, quae, culpa quas adipisci earum dolorem cum! A modi aspernatur iste asperiores pariatur doloremque adipisci iusto esse commodi velit. Voluptas recusandae itaque, aliquam omnis adipisci architecto numquam quasi dolor possimus esse? Quam eveniet ipsam vero, voluptas et, ratione molestiae est iste reiciendis nam ipsum. Error deserunt illum in commodi, ducimus repellat consequuntur maiores iusto libero nihil maxime, eligendi nesciunt quibusdam, optio vel id. Quod incidunt nemo tempora in dolorem iure architecto fugit soluta, dolores dignissimos modi optio rerum debitis, consequatur nihil quia id cupiditate doloremque obcaecati, molestiae iste cumque velit temporibus! Mollitia cum, velit fugiat recusandae dolorum et vero unde, dolor quidem deleniti corrupti maiores? Distinctio neque quidem excepturi, dolorem hic ipsa unde voluptates aut veritatis sint nam corporis incidunt quod quos possimus. Accusamus, sapiente officiis. Rem eveniet, aliquid voluptate adipisci doloremque quia magni quibusdam doloribus ab, voluptatum labore. At, quaerat saepe. Accusantium nemo minima eaque ducimus porro sunt vel iusto aspernatur beatae atque. Aperiam omnis, nulla eaque fugiat cum incidunt voluptates ut ullam culpa repellat. Vitae cupiditate, sunt in recusandae voluptatem hic aliquid adipisci autem saepe illum, quis temporibus perspiciatis enim quaerat provident facere sint odit. Amet neque soluta explicabo assumenda esse ratione quibusdam.
-            </p>
-
-            <div className="flex gap-2 cursor-pointer justify-between">
-              <button
-                onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-                className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-              >
-                <div className="flex gap-2">
-                  <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                    Pesan Sekarang{" "}
-                  </p>
-                  <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-                </div>
-              </button>
-              <button
-                className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-                onClick={() =>
-                  window.open("", "_blank")
-                }
-              >
-                Demo
-              </button>
-            </div>
-          </div>
         </>
       ),
     },
@@ -2929,36 +2825,6 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 3", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
         </>
       ),
     },
@@ -2983,36 +2849,7 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
+          
         </>
       ),
     },
@@ -3022,33 +2859,6 @@ function Service() {
       title: "PAS 2",
       description: (
         <>
-          <div className="">
-            <p className="text-xs md:text-lg items-center justify-center flex text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto sapiente corrupti quia ipsum at laborum cum neque eum rem fugit! Rerum aliquam error blanditiis doloribus quasi itaque porro asperiores dolorum in impedit illum necessitatibus optio natus rem, nihil veritatis distinctio reprehenderit ea ratione. Natus fugiat illo ipsa adipisci ad hic praesentium id nulla quas dolorem, magni sequi, sed suscipit expedita rem iste porro unde! Aspernatur ad rerum soluta delectus ut earum maxime? Quo obcaecati mollitia maxime dolores officia, nemo totam praesentium dignissimos saepe ad tenetur quam explicabo, placeat qui, consequatur ratione aperiam distinctio unde repellat amet dolorum libero quia. Praesentium mollitia modi, dolores, voluptate, maiores sint dignissimos aspernatur blanditiis deleniti accusamus similique sed doloremque dolorum laborum inventore commodi suscipit numquam ducimus quibusdam quo unde eum ratione veritatis repellat. Iste omnis, dolorum quae numquam inventore totam esse qui beatae amet eius dolor neque maiores quod unde excepturi quis doloremque voluptatum perferendis sequi. Perferendis mollitia enim, officia quod ipsa ex expedita voluptatem ad nulla recusandae iste. Non id provident reiciendis fuga voluptas, ad possimus minima dolor odio magnam sit dolore sequi explicabo adipisci soluta et rerum nihil obcaecati ipsam? Reiciendis illum, earum doloribus ipsam eius obcaecati sed, nobis voluptate velit porro assumenda ratione sunt aspernatur architecto reprehenderit a excepturi magnam nemo! Repellendus ea veniam, ratione quos quae totam quia? Libero, iste magnam similique quo, doloremque odit sunt dolore alias eaque impedit accusamus ipsam a vel fuga adipisci officiis totam repellendus assumenda error aperiam molestias doloribus sed? Porro, omnis necessitatibus adipisci placeat repellat dolore natus neque impedit? Aperiam, sunt! Autem reprehenderit iure ut fugiat quas sit commodi, est deleniti quod vero cum enim ad optio, laborum hic numquam rerum iusto necessitatibus provident alias quasi! Ipsum, amet soluta? Porro assumenda quo nemo natus! Unde molestias maxime fugiat ducimus. Corrupti dignissimos sint dolorum placeat, suscipit nostrum inventore repellendus libero distinctio, earum optio, nobis odio non provident commodi quibusdam minima aliquam omnis eos officia vitae accusantium? Aliquid rerum nemo fugit reiciendis blanditiis! Ut, sit. Autem officiis, eius reiciendis exercitationem inventore earum doloremque. Animi laborum commodi est quisquam! Pariatur iusto velit, recusandae debitis atque sed vero esse nostrum perferendis aliquam eligendi cumque exercitationem sit facere ad architecto laborum, libero corporis iste voluptates labore voluptas, assumenda nisi eius. Ad voluptatum aperiam molestias similique perferendis inventore saepe, modi facilis cum rem, eum laborum iusto adipisci, odit vel doloribus quis. Vel deleniti nostrum iste itaque nam officiis! Excepturi esse, vitae quos dolor, distinctio harum, hic minus dolorem quasi modi voluptatem dicta nostrum atque vero! Molestiae minus quod libero possimus quibusdam sit ad accusantium eveniet, autem tempore magnam nihil eos et ipsam assumenda animi quisquam atque! Laboriosam quaerat minus quos, cum, suscipit beatae molestiae nisi tenetur consequuntur commodi quod sunt! Beatae, deserunt vero? Laborum aspernatur hic aut odit a nemo, tenetur architecto doloribus natus iste? Accusamus dolorem, perferendis accusantium nostrum sint totam iusto dicta numquam voluptate id voluptatem sequi dolore libero illo, tempore suscipit nihil facere provident autem laudantium quia assumenda dolor beatae? Architecto corporis magnam error quae amet tempore autem a sunt eius iure, laudantium repellat fuga odit. Odit ducimus quia consequatur delectus sit nulla doloribus expedita omnis veritatis esse hic ut, laudantium, ad velit dicta? Consectetur id aut repudiandae recusandae, corrupti, maxime, soluta nam nihil rerum veniam architecto? Soluta ipsum nulla aliquam consequatur perspiciatis, maxime animi reiciendis sint deserunt. Eius accusantium nostrum, dolor reprehenderit ipsa esse suscipit id doloremque quaerat omnis enim, nulla vel laudantium maiores recusandae ab nobis similique quisquam eaque sint ea distinctio. Nostrum necessitatibus inventore et? Voluptatum quo dolorum reprehenderit dicta est laborum tempore dolore in dolores? Voluptas beatae provident alias atque sed? Accusamus hic aspernatur laudantium magni voluptate? Porro nobis blanditiis fugit quos eveniet at velit distinctio reiciendis, corporis expedita enim magnam voluptatem. Ea quo suscipit amet voluptatum officia error, dolorem aspernatur aperiam sequi quisquam saepe, alias iste voluptates, at similique nulla recusandae. Reiciendis libero sapiente ad rem quod quaerat fugit ratione perspiciatis quae commodi voluptate recusandae beatae iure consectetur illo nesciunt neque similique vitae tempora saepe mollitia, nostrum odio. Enim praesentium, amet voluptates facilis sed earum dicta reprehenderit architecto aut rem et odio cum. Dolorum officiis dolores facere earum, nam obcaecati itaque nisi odio rerum? Pariatur earum nesciunt aut fugit optio quaerat atque, consequatur dolorem totam, porro quos commodi nihil? Fugiat sequi consectetur odio quasi porro aliquam quo obcaecati veritatis nisi quisquam exercitationem quod error molestias iure, ea maxime eius eos, at vitae totam. Sed itaque quidem recusandae odit voluptas harum atque incidunt aspernatur mollitia distinctio quaerat dolorem, facere nemo ea nobis autem exercitationem! Exercitationem, fugiat inventore! Animi ipsam repudiandae est eveniet earum voluptates enim voluptas porro nemo laboriosam provident corrupti itaque doloremque quos nam dignissimos commodi hic expedita odit temporibus vero, omnis nobis numquam exercitationem! Assumenda ipsam expedita magni distinctio excepturi mollitia non nisi saepe? Pariatur iure debitis, impedit neque aperiam numquam amet odit mollitia saepe fugit fuga, quae, culpa quas adipisci earum dolorem cum! A modi aspernatur iste asperiores pariatur doloremque adipisci iusto esse commodi velit. Voluptas recusandae itaque, aliquam omnis adipisci architecto numquam quasi dolor possimus esse? Quam eveniet ipsam vero, voluptas et, ratione molestiae est iste reiciendis nam ipsum. Error deserunt illum in commodi, ducimus repellat consequuntur maiores iusto libero nihil maxime, eligendi nesciunt quibusdam, optio vel id. Quod incidunt nemo tempora in dolorem iure architecto fugit soluta, dolores dignissimos modi optio rerum debitis, consequatur nihil quia id cupiditate doloremque obcaecati, molestiae iste cumque velit temporibus! Mollitia cum, velit fugiat recusandae dolorum et vero unde, dolor quidem deleniti corrupti maiores? Distinctio neque quidem excepturi, dolorem hic ipsa unde voluptates aut veritatis sint nam corporis incidunt quod quos possimus. Accusamus, sapiente officiis. Rem eveniet, aliquid voluptate adipisci doloremque quia magni quibusdam doloribus ab, voluptatum labore. At, quaerat saepe. Accusantium nemo minima eaque ducimus porro sunt vel iusto aspernatur beatae atque. Aperiam omnis, nulla eaque fugiat cum incidunt voluptates ut ullam culpa repellat. Vitae cupiditate, sunt in recusandae voluptatem hic aliquid adipisci autem saepe illum, quis temporibus perspiciatis enim quaerat provident facere sint odit. Amet neque soluta explicabo assumenda esse ratione quibusdam.
-            </p>
-
-            <div className="flex gap-2 cursor-pointer justify-between">
-              <button
-                onClick={() => handleWhatsAppClick("PAS 1", "Rp 99.000")}
-                className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-              >
-                <div className="flex gap-2">
-                  <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                    Pesan Sekarang{" "}
-                  </p>
-                  <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-                </div>
-              </button>
-              <button
-                className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-                onClick={() =>
-                  window.open("", "_blank")
-                }
-              >
-                Demo
-              </button>
-            </div>
-          </div>
         </>
       ),
     },
@@ -3072,36 +2882,6 @@ function Service() {
       ),
       description: (
         <>
-          <div className="flex gap-2 justify-left mb-2">
-            <p className="text-xs md:text-sm items-center justify-center flex text-secondary line-through">
-              Rp. 149.000
-            </p>
-            <p className="text-sm md:text-sm text-primary items-center justify-center flex">
-              Rp. 99.000
-            </p>
-          </div>
-
-          <div className="flex gap-2 cursor-pointer justify-between">
-            <button
-              onClick={() => handleWhatsAppClick("PAS 3", "Rp 99.000")}
-              className="px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-lg border-secondary bg-transparent text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer"
-            >
-              <div className="flex gap-2">
-                <p className="sm:text-base md:text-xs text-primary items-center justify-center flex">
-                  Pesan Sekarang{" "}
-                </p>
-                <BsWhatsapp className="w-7 h-7 text-green-700 items-center justify-center flex m-auto" />
-              </div>
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border transition duration-200 text-sm sm:text-base md:text-sm border-green-500 bg-green-600 text-secondary-foreground hover:shadow-[4px_4px_0px_0px_#06264d] cursor-pointer`}
-              onClick={() =>
-                window.open("", "_blank")
-              }
-            >
-              Demo
-            </button>
-          </div>
         </>
       ),
     },
@@ -4670,6 +4450,178 @@ function Service() {
       ),
     },
   ];
+    const doc_pengamatan = [
+    // SAP PAS - Pengamatan
+    {
+      description: (
+        <>
+          <div id={"ZPAS_PENGAMATAN"} className="space-y-6">
+            <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 p-8 md:p-12 shadow-xl">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-60 h-60 bg-black/10 rounded-full blur-3xl" />
+
+              <div className="relative z-10">
+                <Image
+                  src="/assets/images/SAP.png"
+                  width={200}
+                  height={200}
+                  alt="SAP PAS Documentation"
+                  className="flex m-auto drop-shadow-2xl bg-white rounded-lg p-4"
+                />
+
+                <div className="text-center mt-6 text-white">
+                  <p className="uppercase tracking-[4px] text-green-100 text-xs md:text-sm mb-3">
+                    Pengamatan
+                  </p>
+
+                  <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                    SAP PAS Documentation
+                  </h1>
+
+                  <p className="text-sm md:text-lg text-green-50 max-w-3xl mx-auto leading-8">
+                    Pengamatan
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-2 h-10 rounded-full bg-green-600" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg">
+                  1
+                </div>
+
+                <h2 className="text-xl md:text-2xl font-bold text-slate-800">
+                  Latar Belakang
+                </h2>
+              </div>
+
+              <p className="text-sm md:text-base leading-8 text-slate-700 text-justify">
+                <span className="font-semibold text-green-700">
+                  Latar Belakang
+                </span>{" "}
+                Dalam mendukung kegiatan operasional perusahaan, Great Giant Food
+                (GGF) menggunakan sistem SAP ECC (Enterprise Central Component)
+                sebagai platform utama dalam pengelolaan data dan proses bisnis
+                secara terintegrasi.
+
+                SAP ECC berperan penting dalam mengelola berbagai aktivitas
+                operasional, khususnya dalam pencatatan kegiatan di lapangan,
+                pengelolaan tenaga kerja, serta penyusunan laporan kerja.
+                <br />
+                <br />
+                Dengan adanya sistem ini, data operasional dapat dikelola secara
+                lebih terstruktur, akurat, dan terpusat. Seiring dengan perkembangan
+                teknologi, proses input data operasional di GGF juga didukung oleh
+                aplikasi mobile yang digunakan oleh tim lapangan. Data yang diinput
+                melalui aplikasi tersebut akan tersinkronisasi secara otomatis ke
+                dalam SAP ECC dan menjadi dasar dalam pembentukan laporan, seperti
+                LKH, LHO, LKB, LHR dan lainnya. Dengan integrasi antara aplikasi
+                mobile dan SAP ECC, proses pengelolaan data menjadi lebih efisien
+                serta mendukung pengambilan keputusan yang lebih cepat dan tepat.
+              </p>
+            </div>
+
+            {/* Description */}
+            <div className="bg-white border border-slate-200 rounded-[28px] p-6 md:p-8 shadow-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-2 h-10 rounded-full bg-green-600" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg">
+                  2
+                </div>
+
+                <h2 className="text-xl md:text-2xl font-bold text-slate-800">
+                  Gambaran Umum SAP
+                </h2>
+              </div>
+
+              <p className="text-sm md:text-base leading-8 text-slate-700 text-justify">
+                <span className="font-semibold text-green-700">
+                  SAP ECC (Enterprise Central Component)
+                </span>{" "}
+                adalah sistem yang digunakan perusahaan untuk mengelola berbagai kegiatan operasional dalam satu platform terintegrasi.
+
+                SAP sendiri merupakan singkatan dari Systems, Applications, and Products in Data Processing, yaitu sebuah sistem ERP (Enterprise Resource Planning) yang dikembangkan oleh perusahaan teknologi SAP SE yang berasal dari Jerman.
+
+                Sistem ini dirancang untuk membantu perusahaan dalam mengelola data dan proses bisnis secara terpusat, sehingga informasi dapat diakses dengan lebih cepat, akurat, dan terstruktur.
+                Secara sederhana, SAP dapat diibaratkan sebagai “pusat data” perusahaan, di mana seluruh informasi operasional dikumpulkan dan diolah dalam satu sistem.
+              </p>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="group rounded-[28px] border border-green-100 bg-white p-6 shadow-sm hover:shadow-xl transition duration-300">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg">
+                  3
+                </div>
+
+                <h3 className="font-bold text-xl text-green-700 mb-5">
+                  Tujuan SAP
+                </h3>
+
+                <ul className="space-y-3 text-sm md:text-base text-slate-700 leading-7">
+                  <li>• Mempermudah proses administrasi plantation</li>
+                  <li>• Meminimalisir kesalahan input data</li>
+                  <li>• Mempercepat monitoring pekerjaan</li>
+                  <li>• Integrasi data antar bagian</li>
+                  <li>• Mendukung digitalisasi perusahaan</li>
+                </ul>
+              </div>
+
+              <div className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl transition duration-300">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg">
+                  4
+                </div>
+
+                <h3 className="font-bold text-xl text-green-700 mb-5">
+                  Fungsi Utama
+                </h3>
+
+                <ul className="space-y-3 text-sm md:text-base text-slate-700 leading-7">
+                  <li>• SAP (Systems, Applications, and Products in Data Processing) adalah sistem ERP yang digunakan untuk mengelola proses bisnis perusahaan secara terintegrasi</li>
+                  <li>• SAP membantu menghubungkan berbagai fungsi seperti pembelian, penjualan, gudang, dan keuangan dalam satu sistem</li>
+                  <li>• Sistem ini digunakan untuk mencatat, memproses, dan memonitor setiap transaksi operasional perusahaan</li>
+                  <li>• Data dalam SAP bersifat terpusat sehingga dapat diakses oleh bagian terkait sesuai dengan hak akses pengguna</li>
+                  <li>• Setiap transaksi yang dilakukan akan langsung mempengaruhi data di modul lain (real-time)</li>
+                  <li>• SAP menyediakan laporan yang dapat digunakan untuk monitoring dan pengambilan keputusan</li>
+                  <li>• Dalam kegiatan administrasi, SAP digunakan untuk input data transaksi, pengecekan data, serta pembuatan laporan</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Highlight */}
+            <div className="relative overflow-hidden rounded-[28px] bg-[#00a3de] p-6 md:p-8 text-white shadow-xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-3xl" />
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                    💡
+                  </div>
+
+                  <h3 className="font-bold text-xl">
+                    Informasi Penting
+                  </h3>
+                </div>
+
+                <p className="text-sm md:text-base leading-8 text-slate-200 text-justify">
+                  SAP PAS dibuat secara{" "}
+                  <span className="font-semibold text-secondary">
+                    custom
+                  </span>{" "}
+                  sesuai kebutuhan operasional plantation perusahaan, sehingga
+                  alur bisnis dan fitur yang digunakan telah disesuaikan dengan
+                  proses kerja di lapangan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+  ];
 
   const tabsCard = [
     {
@@ -4866,6 +4818,28 @@ function Service() {
         </BentoGrid>
       ),
     },
+    {
+      title: "Pengamatan",
+      value: "Pengamatan",
+      content: (
+        <BentoGrid className="flex max-w-full border-primary hover:border-secondary rounded-xl border-2">
+          {doc_pengamatan.map((item, i) => (
+            <>
+              <div className="overflow-scroll">
+                <BentoGridItem
+                  key={i}
+                  // title={item.title}
+                  description={item.description}
+                  // header={item.header}
+                  // icon={item.icon}
+                  className={i === 1 || i === 8 ? "md:col-span-1 col-span-1" : "bg-white"}
+                />
+              </div>
+            </>
+          ))}
+        </BentoGrid>
+      ),
+    },
   ];
 
   const words = [
@@ -4897,7 +4871,7 @@ function Service() {
                   <Search className="absolute left-4 h-5 w-5 text-gray-400" />
                   <input
                     type="text"
-                    placeholder="Cari TCODE, modul, atau topik..."
+                    placeholder="Cari TCODE SAP PAS"
                     value={search}
                     onChange={(e) => handleSearch(e.target.value)}
                     onKeyDown={(e) => {
@@ -4974,7 +4948,7 @@ function Service() {
 
                   <input
                     type="text"
-                    placeholder="Cari TCODE, modul, dokumentasi, atau topik..."
+                    placeholder="Cari TCODE SAP PAS"
                     value={search}
                     onChange={(e) => handleSearch(e.target.value)}
                     onKeyDown={(e) => {

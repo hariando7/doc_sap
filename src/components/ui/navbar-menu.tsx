@@ -132,7 +132,7 @@ export const Menu = ({
             {children}
           </div>
         </div>
-        <div className="flex items-center justify-center">
+        {/* <div className="flex items-center justify-center">
           <Link
             href="/docs_pas"
             onMouseEnter={handleMouseEnter}
@@ -160,7 +160,7 @@ export const Menu = ({
               </>
             )}
           </Link>
-        </div>
+        </div> */}
       </div>
 
       <motion.nav

@@ -9,19 +9,19 @@ import {
 } from "@/components/ui/bento-grid-undangan-digital";
 import { TabsPASDocs } from "@/components/ui/tabsPASDocs";
 import { FlipWords } from "@/components/ui/flip-words";
-import { BsWhatsapp } from "react-icons/bs";
+// import { BsWhatsapp } from "react-icons/bs";
 import { Search } from "lucide-react";
 
 function Service() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const handleWhatsAppClick = (productName: string, productPrice: string) => {
-    const message = `Halo,  ${productName}. Berikut detail nya:
-  - Harga: ${productPrice} Apakah tersedia? Mohon informasinya. Terima kasih!`;
-    window.location.href = `https://wa.me/62895637316999?text=${encodeURIComponent(
-      message
-    )}`;
-  };
+  // const handleWhatsAppClick = (productName: string, productPrice: string) => {
+  //   const message = `Halo,  ${productName}. Berikut detail nya:
+  // - Harga: ${productPrice} Apakah tersedia? Mohon informasinya. Terima kasih!`;
+  //   window.location.href = `https://wa.me/62895637316999?text=${encodeURIComponent(
+  //     message
+  //   )}`;
+  // };
 
   const [search, setSearch] = useState("");
   // Di page/parent component
@@ -43,7 +43,7 @@ function Service() {
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-      }, 400); 
+      }, 400);
     }
   };
   const searchHandle = [
@@ -984,7 +984,7 @@ function Service() {
                           </p>
 
                           <p className="text-sm font-bold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -992,11 +992,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
                       title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -1206,7 +1207,7 @@ function Service() {
                           </p>
 
                           <p className="text-sm font-bold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -1214,11 +1215,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
                       title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -1430,7 +1432,7 @@ function Service() {
                           </p>
 
                           <p className="text-sm font-bold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -1438,11 +1440,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
                       title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -1679,7 +1682,7 @@ function Service() {
                         </h4>
 
                         <p className="text-sm md:text-base leading-7 text-slate-600 text-justify max-w-2xl">
-                          Semua fungsi pada ZPAS601D_M sudah tersedia pada Video Youtube
+                          Semua fungsi pada ZPAS601D_M sudah tersedia pada Video
                         </p>
                       </div>
                     </div>
@@ -1687,7 +1690,7 @@ function Service() {
                     {/* Button */}
                     <div className="flex-shrink-0">
                       <a
-                        href="https://youtube.com/"
+                        href="https://youtu.be/fpe8KAqChy0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-red-500 hover:bg-red-600 transition-all duration-300 text-white font-semibold px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl"
@@ -1700,7 +1703,7 @@ function Service() {
                           </p>
 
                           <p className="text-sm font-bold">
-                            Open YouTube
+                            Open
                           </p>
                         </div>
                       </a>
@@ -1708,11 +1711,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
                       title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -1900,7 +1904,7 @@ function Service() {
                           </p>
 
                           <p className="text-xs font-semibold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -1908,11 +1912,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="Tutorial ZPASR33M"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
+                      title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -2097,7 +2102,7 @@ function Service() {
                           </p>
 
                           <p className="text-xs font-semibold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -2105,11 +2110,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="Tutorial ZPASR32M"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
+                      title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -2294,7 +2300,7 @@ function Service() {
                           </p>
 
                           <p className="text-xs font-semibold">
-                            Open YouTube
+                            Open Video
                           </p>
                         </div>
                       </a>
@@ -2302,11 +2308,12 @@ function Service() {
                   </div>
 
                   {/* Embedded Video */}
-                  <div className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
                     <iframe
                       className="w-full aspect-video"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="Tutorial ZPASR31M"
+                      src="https://www.youtube.com/embed/fpe8KAqChy0"
+                      title="Tutorial ZPAS220"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -2849,7 +2856,7 @@ function Service() {
       ),
       description: (
         <>
-          
+
         </>
       ),
     },
@@ -4450,7 +4457,7 @@ function Service() {
       ),
     },
   ];
-    const doc_pengamatan = [
+  const doc_pengamatan = [
     // SAP PAS - Pengamatan
     {
       description: (
@@ -4861,7 +4868,7 @@ function Service() {
             {/* konten */}
             <div className="h-[1000px] w-full p-10 flex justify-between [perspective:1000px] relative flex-col items-start">
               <h1 className="font-bold text-4xl text-center justify-center m-auto flex pt-10 text-primary hover:text-secondary">
-                Documentation
+                Dokumentasi
                 <FlipWords className="text-secondary" words={words} />
               </h1>
               {/* Search bar */}
@@ -4923,7 +4930,7 @@ function Service() {
                 </div>
 
                 <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                  Documentation
+                  Dokumentasi
                 </h1>
 
                 <div className="mt-4 flex justify-center">

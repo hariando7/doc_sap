@@ -79,7 +79,7 @@ export const TabsPASDocs = forwardRef<
     <>
       <div
         className={cn(
-          "items-center justify-center m-auto flex [perspective:1000px] relative overflow-auto sm:overflow-visible md:no-visible-scrollbar max-w-full w-full h-20 lg:h-14",
+          "items-center justify-center m-auto flex [perspective:1000px] relative overflow-auto sm:overflow-visible md:no-visible-scrollbar max-w-full w-full h-20",
           containerClassName
         )}
       >

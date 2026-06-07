@@ -86,11 +86,16 @@ function Service() {
       tcode: "ZPASR31M",
       title: "Report Realisasi",
       tab: "PAS",
-    },
+    }, 
     {
       tcode: "ZPAS_PENGAMATAN",
       title: "Pengamatan",
       tab: "Pengamatan",
+    },
+    {
+      tcode: "Irigasi",
+      title: "Irigasi",
+      tab: "SPK Mobile",
     },
   ];
 
@@ -2313,6 +2318,92 @@ function Service() {
                       className="w-full aspect-video"
                       src="https://www.youtube.com/embed/fpe8KAqChy0"
                       title="Tutorial ZPAS220"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* LHO Irigasi */}
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
+              {/* Background Effect */}
+              <div className="absolute top-0 right-0 w-72 h-72 bg-green-100/40 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-60 h-60 bg-emerald-100/30 rounded-full blur-3xl" />
+
+              <div className="relative z-10">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 text-white font-bold text-lg shadow-lg">
+                    9
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-medium text-green-700 uppercase tracking-wider">
+                      PAS Documentation
+                    </p>
+
+                    <h3 id="Irigasi" className="text-2xl md:text-3xl font-bold text-slate-800">
+                      LHO Irigasi — LHO irigasi tutorial Mandor
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Video Tutorial */}
+                <div className="mt-6 bg-gradient-to-r from-red-50 via-white to-red-50 border border-red-100 rounded-3xl p-6">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                    {/* Left Content */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-red-500 text-white flex items-center justify-center text-2xl shadow-lg">
+                        ▶️
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-medium uppercase tracking-wider text-red-500 mb-1">
+                          Video Tutorial
+                        </p>
+
+                        <h4 className="text-xl font-bold text-slate-800 mb-2">
+                          Penggunaan LHO Irigasi untuk Mandor
+                        </h4>
+
+                        <p className="text-sm md:text-base leading-7 text-slate-600 text-justify max-w-2xl">
+                          Video berikut menjelaskan proses penggunaan LHO Irigasi untuk mandor
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Button */}
+                    <div className="flex-shrink-0">
+                      <a
+                        href="https://youtu.be/KS-SfzxGROg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 transition-all duration-300 text-white font-medium px-4 py-3 rounded-xl shadow-md hover:shadow-lg"
+                      >
+                        <span className="text-lg">🎥</span>
+
+                        <div className="text-left leading-tight">
+                          <p className="text-[10px] opacity-80">
+                            Lihat Tutorial
+                          </p>
+
+                          <p className="text-xs font-semibold">
+                            Open Video
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Embedded Video */}
+                  <div className="mt-8 max-w-6xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-lg bg-black">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/KS-SfzxGROg"
+                      title="Tutorial LHO Irigasi"
                       loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen

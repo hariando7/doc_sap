@@ -9,10 +9,10 @@ import HeroDekstop from "../component/Hero";
 import FooterComponents from "../component/Footer";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import {
-  HoveredLink,
+  // HoveredLink,
   Menu,
   MenuItem,
-  ProductItem,
+  // ProductItem,
 } from "@/components/ui/navbar-menu";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {

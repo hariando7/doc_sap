@@ -2,41 +2,41 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import FooterComponents from "../component/Footer";
+// import FooterComponents from "../component/Footer";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import {
-  HoveredLink,
+  // HoveredLink,
   Menu,
   MenuItem,
-  ProductItem,
+  // ProductItem,
 } from "@/components/ui/navbar-menu";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import { FcInvite } from "react-icons/fc";
-import {
-  // IconBrandGithub,
-  // IconBrandX,
-  // IconExchange,
-  IconHome,
-  // IconNewSection,
-  // IconTerminal2,
-  // FcInvite
-} from "@tabler/icons-react";
+// import { FloatingDock } from "@/components/ui/floating-dock";
+// import { FcInvite } from "react-icons/fc";
+// import {
+//   IconBrandGithub,
+//   IconBrandX,
+//   IconExchange,
+//   IconHome,
+//   IconNewSection,
+//   IconTerminal2,
+//   FcInvite
+// } from "@tabler/icons-react";
 import Link from "next/link";
 import DocsPAS from "../component/doc_pas/services";
 
-const links = [
-  {
-    title: "Home",
-    icon: <IconHome className="h-full w-full text-white" />,
-    href: "/",
-  },
+// const links = [
+//   {
+//     title: "Home",
+//     icon: <IconHome className="h-full w-full text-white" />,
+//     href: "/",
+//   },
 
-  {
-    title: "Docs PAS",
-    icon: <FcInvite className="h-full w-full text-white" />,
-    href: "/docs_pas",
-  },
-];
+//   {
+//     title: "Docs PAS",
+//     icon: <FcInvite className="h-full w-full text-white" />,
+//     href: "/docs_pas",
+//   },
+// ];
 
 function LayananPage({ className }: { className?: string }) {
   const isMobile = useMediaQuery("(max-width: 768px)");

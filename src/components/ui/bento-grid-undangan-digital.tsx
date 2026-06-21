@@ -8,7 +8,8 @@ export const BentoGrid = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(1); // Default untuk desktop
   const [scrollToTop, setScrollToTop] = useState(false); // State untuk mengontrol scroll
 
@@ -31,23 +32,23 @@ export const BentoGrid = ({
     }
   }, [scrollToTop]); // Efek hanya terjadi ketika scrollToTop berubah
 
-  const totalItems = React.Children.count(children);
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  // const totalItems = React.Children.count(children);
+  // const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prev) => prev + 1);
-      setScrollToTop(true); // Set state untuk scroll ke atas
-    }
-  };
+  // const handleNextPage = () => {
+  //   if (currentPage < totalPages) {
+  //     setCurrentPage((prev) => prev + 1);
+  //     setScrollToTop(true); // Set state untuk scroll ke atas
+  //   }
+  // };
 
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-      setScrollToTop(true); // Set state untuk scroll ke atas
-      // Jangan scroll ke atas saat tombol "Kembali" ditekan
-    }
-  };
+  // const handlePrevPage = () => {
+  //   if (currentPage > 1) {
+  //     setCurrentPage((prev) => prev - 1);
+  //     setScrollToTop(true); // Set state untuk scroll ke atas
+  //     // Jangan scroll ke atas saat tombol "Kembali" ditekan
+  //   }
+  // };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const displayedItems = React.Children.toArray(children).slice(

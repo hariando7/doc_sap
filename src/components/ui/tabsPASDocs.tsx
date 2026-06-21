@@ -30,8 +30,8 @@ export const TabsPASDocs = forwardRef<
     tabs: propTabs,
     tabsCard: propTabsCard,
     containerClassName,
-    activeTabClassName,
-    tabClassName,
+    // activeTabClassName,
+    // tabClassName,
     contentClassName,
   },
   ref
@@ -71,7 +71,7 @@ export const TabsPASDocs = forwardRef<
   }));
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hovering, setHovering] = useState(false);
+  // const [hovering, setHovering] = useState(false);
 
   // const isMobile = useMediaQuery("(max-width: 768px)");
 

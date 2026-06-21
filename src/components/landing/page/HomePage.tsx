@@ -35,9 +35,9 @@ const links = [
   },
 
   {
-    title: "Undangan Digital",
+    title: "",
     icon: <FcInvite className="h-full w-full text-white" />,
-    href: "/undangan-digital",
+    href: "/",
   },
 ];
 
@@ -63,14 +63,14 @@ function HomePage({ className }: { className?: string }) {
                     active={active}
                     item="Home"
                   >
-                    <div className="flex flex-col space-y-4 text-sm">
+                    {/* <div className="flex flex-col space-y-4 text-sm">
                       <HoveredLink href="/">
                         Tentang PAS Docs
                       </HoveredLink>
-                      <HoveredLink href="/undangan-digital">
+                      <HoveredLink href="/">
                         Team PAS
                       </HoveredLink>
-                    </div>
+                    </div> */}
                   </MenuItem>
                 </Link>
                 <Link href={"/docs_pas"}>
@@ -79,14 +79,14 @@ function HomePage({ className }: { className?: string }) {
                     active={active}
                     item="Docs"
                   >
-                    <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                    {/* <div className="text-sm grid grid-cols-2 gap-10 p-4">
                       <ProductItem
                         title="DOC SAP PAS"
                         href="/doc_pas"
                         src="/assets/images/image_sap.png"
                         description="Selengkapnya"
                       />
-                    </div>
+                    </div> */}
                   </MenuItem>
                 </Link>
               </Menu>

@@ -84,7 +84,7 @@ function NavbarComponents({ className }: { className?: string }) {
                   <ProductItem
                     title="Pernikahan"
                     href=""
-                    src="/assets/images/undangan1.jpg"
+                    src="/"
                     description="Prepare for tech interviews like never before."
                   />
                 </div>

@@ -41,7 +41,7 @@ export const TabsPASDocs = forwardRef<
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
-  // ✅ Ganti tab aktif langsung by value — tidak bergantung pada urutan array
+  // Ganti tab aktif langsung by value — tidak bergantung pada urutan array
   const selectTabByValue = (value: string) => {
     const tab = propTabs.find((t) => t.value === value);
     const card = propTabsCard.find((t) => t.value === value);
@@ -63,7 +63,7 @@ export const TabsPASDocs = forwardRef<
     setActiveCard(newTabsCard[0]);
   };
 
-  // ✅ Expose switchTab — langsung set by value, tidak pakai index
+  // Expose switchTab — langsung set by value, tidak pakai index
   useImperativeHandle(ref, () => ({
     switchTab: (value: string) => {
       selectTabByValue(value);
@@ -77,14 +77,18 @@ export const TabsPASDocs = forwardRef<
 
   return (
     <>
-      <div
-        className={cn(
-          "items-center justify-center m-auto flex [perspective:1000px] relative overflow-auto sm:overflow-visible md:no-visible-scrollbar max-w-full w-full h-20",
-          containerClassName
-        )}
-      >
-        <div className="w-full h-full overflow-x-auto md:p-2">
-          <div className="flex space-x-2 md:space-x-4 min-w-max">
+      <div className="flex flex-col lg:flex-row gap-6 w-full">
+        {/* Sidebar Tab */}
+        {/* ================= MOBILE TAB ================= */}
+        <div className="lg:hidden">
+          <div
+            className="
+      flex gap-2
+      overflow-x-auto
+      pb-2
+      scrollbar-hide
+    "
+          >
             {propTabs.map((tab, idx) => (
               <button
                 key={tab.value}
@@ -92,47 +96,114 @@ export const TabsPASDocs = forwardRef<
                   moveSelectedTabToTop(idx);
                   setActiveCard(propTabsCard[idx]);
                 }}
-                onMouseEnter={() => setHovering(true)}
-                onMouseLeave={() => setHovering(false)}
                 className={cn(
-                  "relative px-2 md:px-4 py-2 rounded-full",
-                  tabClassName
+                  `
+          flex-shrink-0
+          px-4
+          py-3
+          rounded-2xl
+          text-sm
+          font-medium
+          transition-all
+          duration-300
+          border
+          `,
+                  active.value === tab.value
+                    ? `
+              bg-gradient-to-r
+              from-green-500
+              to-emerald-600
+              text-white
+              border-transparent
+              shadow-lg
+            `
+                    : `
+              bg-white
+              border-slate-200
+              text-slate-700
+            `
                 )}
-                style={{ transformStyle: "preserve-3d" }}
+              >
+                {tab.title}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= DESKTOP SIDEBAR ================= */}
+        <div
+          className={cn(
+            "hidden lg:block w-full lg:w-72 shrink-0 rounded-xl",
+            containerClassName
+          )}
+        >
+          <div
+            className="
+      sticky top-6
+      bg-white/90
+      backdrop-blur-xl
+      border border-slate-200
+      rounded-3xl
+      p-4
+      h-[620px]
+      shadow-[0_8px_30px_rgb(0,0,0,0.06)]
+    "
+          >
+            {propTabs.map((tab, idx) => (
+              <button
+                key={tab.value}
+                onClick={() => {
+                  moveSelectedTabToTop(idx);
+                  setActiveCard(propTabsCard[idx]);
+                }}
+                className={cn(
+                  `
+          relative
+          w-full
+          text-left
+          px-4
+          py-3
+          rounded-2xl
+          transition-all
+          duration-300
+          mb-2
+          `,
+                  active.value === tab.value
+                    ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg"
+                    : "hover:bg-slate-100 text-slate-700"
+                )}
               >
                 {active.value === tab.value && (
                   <motion.div
-                    layoutId="clickedbutton"
-                    transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                    className={cn(
-                      "absolute inset-0 bg-gradient-to-r from-secondary to-secondary shadow-lg rounded-full text-white",
-                      activeTabClassName
-                    )}
+                    layoutId="activeIndicator"
+                    className="
+              absolute
+              left-0
+              top-2
+              bottom-2
+              w-1
+              rounded-full
+              bg-white
+            "
                   />
                 )}
-                <span
-                  className={cn(
-                    "relative block text-sm sm:text-base md:text-lg",
-                    {
-                      "text-white font-bold": active.value === tab.value,
-                      "text-black": active.value !== tab.value,
-                    }
-                  )}
-                >
+
+                <span className="relative z-10 font-medium">
                   {tab.title}
                 </span>
               </button>
             ))}
           </div>
         </div>
-      </div>
 
-      <div className="flex w-full h-full gap-10">
-        <FadeInDivCard
-          tabsCard={propTabsCard}
-          activeCard={activeCard}
-          className={cn("", contentClassName)}
-        />
+        {/* Content */}
+        <div className="flex-1 min-w-0">
+          <FadeInDivCard
+            tabsCard={propTabsCard}
+            activeCard={activeCard}
+            className={cn("", contentClassName)}
+          />
+        </div>
       </div>
     </>
   );
@@ -185,22 +256,23 @@ export const FadeInDivCard = ({
   activeCard: Tab;
 }) => {
   return (
-    <div className="relative w-full h-full md:mt-5">
-      {tabsCard.map((tab) => (
-        <motion.div
-          key={tab.value}
-          layoutId={tab.value}
-          style={{
-            zIndex: tab.value === activeCard.value ? 1 : -1,
-            opacity: tab.value === activeCard.value ? 1 : 0,
-            transition: "opacity 0.3s ease-in-out",
-          }}
-          animate={{ y: tab.value === activeCard.value ? [0, 40, 0] : 0 }}
-          className={cn("absolute w-full top-0 left-0 md:p-4", className)}
-        >
-          {tab.content}
-        </motion.div>
-      ))}
+    <div className="w-full">
+      {tabsCard.map((tab) =>
+        tab.value === activeCard.value ? (
+          <motion.div
+            key={tab.value}
+            layoutId={tab.value}
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={cn(
+              "w-full bg-white rounded-3xl border border-slate-200 shadow-lg",
+              className
+            )}
+          >
+            {tab.content}
+          </motion.div>
+        ) : null
+      )}
     </div>
   );
 };

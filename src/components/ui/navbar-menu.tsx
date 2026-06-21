@@ -116,7 +116,7 @@ export const Menu = ({
     <>
       <div
         onMouseLeave={() => setActive(null)}
-        className="fixed top-0 left-0 right-0 z-50 bg-white md:rounded-none lg:w-full flex pl-32 pr-32 transition-transform duration-500 ease-in-out justify-between"
+        className="fixed top-0 left-0 right-0 z-50 md:rounded-none lg:w-full flex pl-32 pr-32 transition-transform duration-500 ease-in-out justify-between bg-white shadow-md"
       >
         <div className="flex justify-between">
           <div className="flex items-center justify-center text-white font-bold">
@@ -125,45 +125,16 @@ export const Menu = ({
               width={100}
               height={50}
               alt="logo"
-              className=""
+              className="mb-2"
             />
           </div>
           <div className="flex justify-center space-x-6 py-6 px-20">
             {children}
           </div>
         </div>
-        {/* <div className="flex items-center justify-center">
-          <Link
-            href="/docs_pas"
-            onMouseEnter={handleMouseEnter}
-            className="w-full text-[16px] text-center px-6 py-2 bg-gradient-to-r from-secondary to-secondary text-primary-foreground hover:text-line-10 hover:from-white hover:to-white hover:bg-gradient-to-r hover:text-secondary hover:border-2 hover:border-secondary rounded-lg cursor-pointer transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110 hover:rotate-1 shadow-md hover:shadow-xl transform-gpu"
-          >
-            {isFirstLoading ? (
-              <Loader className="animate-spin" />
-            ) : (
-              <>
-                <div className="flex gap-2">
-                  <span className="animated-text flex justify-center font-bold">
-                    {"Documentation".split("").map((letter, index) => (
-                      <span
-                        key={index}
-                        ref={(el) => {
-                          lettersRef.current[index] = el;
-                        }}
-                        className="letter transition-transform duration-300 hover:translate-y-[-5px] hover:rotate-[10deg] inline-block"
-                      >
-                        {letter}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              </>
-            )}
-          </Link>
-        </div> */}
       </div>
 
-      <motion.nav
+      {/* <motion.nav
         initial={{ y: 0 }}
         animate={{ y: showNavbar ? 0 : -140 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -178,12 +149,6 @@ export const Menu = ({
           </div>
           <div className="text-primary-foreground font-bold flex gap-2 justify-end">
             <div className="flex gap-2">
-              {/* <p>
-                <FaInstagram className="w-6 h-6 text-white" />
-              </p>
-              <p>
-                <FaFacebookSquare className="w-6 h-6 text-white" />
-              </p> */}
               <Link
                 href="https://wa.me/62895637316999?text=Halo%20saya%20ingin%20bertanya"
                 target="_blank"
@@ -194,7 +159,7 @@ export const Menu = ({
             </div>
           </div>
         </div>
-      </motion.nav>
+      </motion.nav> */}
     </>
   );
 };

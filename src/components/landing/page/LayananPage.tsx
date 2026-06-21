@@ -49,7 +49,7 @@ function LayananPage({ className }: { className?: string }) {
           <>
             <div
               className={cn(
-                "fixed top-10 inset-x-0 max-w-full mx-auto z-50",
+                "fixed top-10 inset-x-0 max-w-full mx-auto z-0",
                 className
               )}
             >
@@ -60,11 +60,11 @@ function LayananPage({ className }: { className?: string }) {
                     active={active}
                     item="Home"
                   >
-                    <div className="flex flex-col space-y-4 text-sm">
+                    {/* <div className="flex flex-col space-y-4 text-sm">
                       <HoveredLink href="/docs_pas">
                         Docs PAS
                       </HoveredLink>
-                    </div>
+                    </div> */}
                   </MenuItem>
                 </Link>
                 <Link href={"/docs_pas"}>
@@ -73,29 +73,29 @@ function LayananPage({ className }: { className?: string }) {
                     active={active}
                     item="Docs"
                   >
-                    <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                    {/* <div className="text-sm grid grid-cols-2 gap-10 p-4">
                       <ProductItem
                         title="Doc PAS"
                         href="/docs_pas"
                         src="/assets/images/rpk.png"
                         description="Selengkapnya"
                       />
-                    </div>
+                    </div> */}
                   </MenuItem>
                 </Link>
               </Menu>
             </div>
 
             <DocsPAS />
-            <FooterComponents />
+            {/* <FooterComponents /> */}
           </>
         ) : (
           <>
             <DocsPAS />
-            <FloatingDock
+            {/* <FloatingDock
               className="bottom-0 w-full flex m-auto justify-center fixed"
               items={links}
-            />
+            /> */}
           </>
         )}
       </>

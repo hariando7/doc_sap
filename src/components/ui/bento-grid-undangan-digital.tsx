@@ -67,7 +67,7 @@ export const BentoGrid = ({
       </div>
 
       <div className="flex justify-between mt-4">
-        <button
+        {/* <button
           onClick={() => {
             if (currentPage === 1) {
               alert("Anda sudah berada di halaman pertama.");
@@ -82,13 +82,13 @@ export const BentoGrid = ({
             }`}
         >
           Kembali
-        </button>
+        </button> */}
 
-        <span className="flex m-auto justify-center items-center text-primary font-bold hover:text-secondary text-xs sm:text-sm md:text-base">
+        {/* <span className="flex m-auto justify-center items-center text-primary font-bold hover:text-secondary text-xs sm:text-sm md:text-base">
           {`Page ${currentPage} of ${totalPages}`}
-        </span>
+        </span> */}
 
-        <button
+        {/* <button
           onClick={() => {
             if (currentPage === totalPages) {
               alert("Anda sudah berada di halaman terakhir.");
@@ -103,7 +103,7 @@ export const BentoGrid = ({
             }`}
         >
           Selanjutnya
-        </button>
+        </button> */}
       </div>
     </div>
   );

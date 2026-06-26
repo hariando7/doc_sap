@@ -136,8 +136,8 @@ export const Menu = ({
 
           {/* Download Button */}
           <a
-            href="/assets/spkmobile_v2.1.01.apk"
-            download="spkmobile_v2.1.01.apk"
+            href="/assets/spkmobile2.1.01-release.apk"
+            download="spkmobile2.1.01-release.apk"
             className="group"
           >
             <div className="flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-500/30">

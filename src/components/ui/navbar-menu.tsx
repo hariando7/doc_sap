@@ -116,21 +116,39 @@ export const Menu = ({
     <>
       <div
         onMouseLeave={() => setActive(null)}
-        className="fixed top-0 left-0 right-0 z-50 md:rounded-none lg:w-full flex pl-32 pr-32 transition-transform duration-500 ease-in-out justify-between bg-white shadow-md"
+        className="fixed inset-x-0 top-0 z-50 border-b border-gray-200/60 bg-white/90 backdrop-blur-xl shadow-sm"
       >
-        <div className="flex justify-between">
-          <div className="flex items-center justify-center text-white font-bold">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+          {/* Logo + Menu */}
+          <div className="flex items-center gap-12">
             <Image
               src="/assets/images/newLogo-removebg.png"
-              width={100}
-              height={50}
-              alt="logo"
-              className="mb-2"
+              width={95}
+              height={45}
+              alt="Logo"
+              className="object-contain"
             />
+
+            <div className="hidden lg:flex items-center gap-8">
+              {children}
+            </div>
           </div>
-          <div className="flex justify-center space-x-6 py-6 px-20">
-            {children}
-          </div>
+
+          {/* Download Button */}
+          <a
+            href="/assets/spkmobile_v2.1.01.apk"
+            download="spkmobile_v2.1.01.apk"
+            className="group"
+          >
+            <div className="flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-500/30">
+              <span className="text-lg">⬇️</span>
+              <span>Download SPK Mobile</span>
+
+              <span className="rounded-md bg-white/20 px-2 py-0.5 text-xs font-medium">
+                v2.1.01
+              </span>
+            </div>
+          </a>
         </div>
       </div>
 

@@ -1361,7 +1361,7 @@ function Service() {
       {!isMobile ? (
         <>
           {/* konten */}
-          <section className="bg-gradient-to-b from-white via-white to-white animate-gradient">
+          <section className="bg-gradient-to-b from-white via-white to-white animate-gradient z-0">
             <div className="h-full w-full pt-10 flex justify-between [perspective:1000px] relative flex-col items-start">
               <h1 className="font-bold text-4xl text-center justify-center m-auto flex pt-10 text-primary hover:text-secondary">
                 Dokumentasi
@@ -1403,7 +1403,22 @@ function Service() {
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-100/40 rounded-full blur-3xl" />
 
             {/* Main Content */}
-            <div className="relative w-full px-5 py-10 md:px-10 lg:px-20 flex flex-col">
+            <div className="relative w-full px-5 py-5 md:px-10 lg:px-20 flex flex-col">
+
+              <a
+                href="/assets/spkmobile_v2.1.01.apk"
+                download="spkmobile_v2.1.01.apk"
+                className="group"
+              >
+                <div className="flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-500/30 mb-4">
+                  <span className="text-lg">⬇️</span>
+                  <span>Download SPK Mobile</span>
+
+                  <span className="rounded-md bg-white/20 px-2 py-0.5 text-xs font-medium">
+                    v2.1.01
+                  </span>
+                </div>
+              </a>
 
               {/* Logo */}
               <div className="flex justify-center">
